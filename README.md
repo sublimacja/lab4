@@ -26,7 +26,9 @@ xml i csv.
 GET
 ```
 
-* **Przykład użycia konwersja z formatu TXT na JSON:**
+* **Przykłady użycia:**
+
+  **konwersja formatu TXT zwracanego przez API z zadania 3 do formatu JSON:**
 
 ```
 http://localhost:8082/api/ppkwu/lab4/TESt0912./txt/json
@@ -43,5 +45,43 @@ TESt0912.
 
 ```
 {"UPPER":"3","LOWER":"1","OWN":"5","DIGIT":"4","SPECIAL":"1"}
+```
+
+**konwersja formatu CSV zwracanego przez API z zadania 3 do formatu JSON:**
+
+```
+http://localhost:8082/api/ppkwu/lab4/TESt0912./csv/json
+```
+
+`wejście:`
+
+```
+csv
+TESt0912.
+```
+
+`wyjście:`
+
+```
+{"UPPER":"3","LOWER":"1","OWN":"5","DIGIT":"4","SPECIAL":"1"}
+```
+
+**konwersja formatu XML zwracanego przez API z zadania 3 do formatu JSON:**
+
+```
+http://localhost:8082/api/ppkwu/lab4/TESt0912./xml/json
+```
+
+`wejście:`
+
+```
+xml
+TESt0912.
+```
+
+`wyjście:`
+
+```
+{"stringHelper": { "ownCombinationCounter": 5, "digitCounter": 4, "specialCounter": 1, "lowerCounter": 1, "upperCounter": 3 }}
 ```
 

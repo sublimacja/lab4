@@ -17,13 +17,13 @@ public class ApiController {
     @GetMapping("/lab4/{string}/{zad3Format}/json")
     public String getJson(@PathVariable("string") String string, @PathVariable("zad3Format") String zad3Format) {
         if (zad3Format.equals("txt"))
-            return apiService.txtToJson(string,zad3Format);
+            return apiService.txtToJson(string, zad3Format);
         else if (zad3Format.equals("csv"))
-            return apiService.csvToJson(string);
+            return apiService.csvToJson(string, zad3Format);
         else if (zad3Format.equals("xml"))
-            return apiService.xmlToJson(string);
+            return apiService.xmlToJson(string, zad3Format);
         else
-            return apiService.getResFromEx3(string,zad3Format);
+            return apiService.getResFromEx3(string, zad3Format);
 
     }
 
@@ -39,7 +39,7 @@ public class ApiController {
 
     @GetMapping("/lab4/{string}/txt")
     public String getTxt(@PathVariable("string") String string, @PathVariable("zad3Format") String zad3Format) {
-       return null;
+        return null;
 
     }
 }
