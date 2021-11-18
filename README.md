@@ -9,13 +9,15 @@ xml i csv.
 * **SKŁADNIA**
 
  ``` 
-ścieżkaApi/{tekst}/{format}
+ścieżkaApi/{tekst}/{formatZad3}/{formatZad4}
 ```
 
 * **Parametry**
 
  ```
-
+{tekst} - ciąg znaków przekazywany do API z zadania 3
+{formatZad3} - format zwracany przez API z zadania 3
+{formatZad4} - format do ktorego konwertujemy
  ```
 
 * **Metoda**
