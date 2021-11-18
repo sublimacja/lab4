@@ -27,9 +27,16 @@ public class ApiController {
 
     }
 
-    @GetMapping(value = "/lab4/{string}/xml", produces = {"application/xml", "text/xml"})
+    @GetMapping(value = "/lab4/{string}/{zad3Format}/xml", produces = {"application/xml", "text/xml"})
     public String getXml(@PathVariable("string") String string, @PathVariable("zad3Format") String zad3Format) {
-        return null;
+        if (zad3Format.equals("txt"))
+            return apiService.txtToXml(string, zad3Format);
+        else if (zad3Format.equals("csv"))
+            return apiService.csvToXml(string, zad3Format);
+        else if (zad3Format.equals("json"))
+            return apiService.jsonToXml(string, zad3Format);
+        else
+            return apiService.getResFromEx3(string, zad3Format);
     }
 
     @GetMapping("/lab4/{string}/csv")

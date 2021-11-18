@@ -1,6 +1,7 @@
 package com.example.lab4.service;
 
 
+import com.example.lab4.StringHelper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
@@ -16,8 +17,8 @@ public class ApiService {
 
     private static final String URI = "http://localhost:8081/api/ppkwu/lab3/";
 
-    public String txtToJson(String string, String typeEx3) {
-        String result = getResFromEx3(string, typeEx3);
+    public String txtToJson(String string, String zad3Format) {
+        String result = getResFromEx3(string, zad3Format);
         String[] str = cutString(result);
         HashMap<String, String> map = new HashMap<>();
         map.put(str[0].replaceAll(":", ""), str[1]);
@@ -36,8 +37,8 @@ public class ApiService {
     }
 
 
-    public String csvToJson(String string, String typeEx3) {
-        String result = getResFromEx3(string, typeEx3);
+    public String csvToJson(String string, String zad3Format) {
+        String result = getResFromEx3(string, zad3Format);
         result = result.replaceAll("\\n", ",");
         String[] str = result.split(",");
         HashMap<String, String> map = new HashMap<>();
@@ -56,8 +57,8 @@ public class ApiService {
         return json;
     }
 
-    public String xmlToJson(String string, String typeEx3) {
-        String result = getResFromEx3(string, typeEx3);
+    public String xmlToJson(String string, String zad3Format) {
+        String result = getResFromEx3(string, zad3Format);
         JSONObject xmlJSONObj = XML.toJSONObject(result);
         return xmlJSONObj.toString(2);
 
@@ -73,4 +74,21 @@ public class ApiService {
     }
 
 
+    public String txtToXml(String string, String zad3Format) {
+        String result = getResFromEx3(string, zad3Format);
+        String[] str = cutString(result);
+        StringHelper stringHelper = new StringHelper(str[1], str[3], str[5], str[7], str[9]);
+        JSONObject json = new JSONObject(stringHelper);
+        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><stringHelper>" + XML.toString(json) + "</stringHelper>";
+    }
+
+    public String jsonToXml(String string, String zad3Format) {
+        String result = getResFromEx3(string, zad3Format);
+        JSONObject json = new JSONObject(result);
+        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><stringHelper>" + XML.toString(json) + "</stringHelper>";
+    }
+
+    public String csvToXml(String string, String zad3Format) {
+        return null;
+    }
 }

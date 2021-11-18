@@ -28,7 +28,7 @@ GET
 
 * **Przykłady użycia:**
 
-  **konwersja formatu TXT zwracanego przez API z zadania 3 do formatu JSON:**
+**konwersja formatu TXT zwracanego przez API z zadania 3 do formatu JSON:**
 
 ```
 http://localhost:8082/api/ppkwu/lab4/TESt0912./txt/json
@@ -83,5 +83,30 @@ TESt0912.
 
 ```
 {"stringHelper": { "ownCombinationCounter": 5, "digitCounter": 4, "specialCounter": 1, "lowerCounter": 1, "upperCounter": 3 }}
+```
+
+**konwersja formatu JSON zwracanego przez API z zadania 3 do formatu XML:**
+
+```
+http://localhost:8082/api/ppkwu/lab4/TESt0912./json/xml
+```
+
+`wejście:`
+
+```
+json
+TESt0912.
+```
+
+`wyjście:`
+
+```
+<stringHelper>
+<UPPER>3</UPPER>
+<LOWER>1</LOWER>
+<OWN>5</OWN>
+<DIGIT>4</DIGIT>
+<SPECIAL>1</SPECIAL>
+</stringHelper>
 ```
 
