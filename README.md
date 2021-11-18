@@ -26,3 +26,22 @@ xml i csv.
 GET
 ```
 
+* **Przykład użycia konwersja z formatu TXT na JSON:**
+
+```
+http://localhost:8082/api/ppkwu/lab4/TESt0912./txt/json
+```
+
+`wejście:`
+
+```
+txt
+TESt0912.
+```
+
+`wyjście:`
+
+```
+{"UPPER":"3","LOWER":"1","OWN":"5","DIGIT":"4","SPECIAL":"1"}
+```
+
